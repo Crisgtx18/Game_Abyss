@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Partidas guardadas (se generan solas)
+saves/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Extras
+*.log
+Thumbs.db
