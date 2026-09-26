@@ -1,4 +1,4 @@
-# Mobs inventados de Mokulandia + bichos del Abismo (estilo Made in Abyss):
+# Mobs inventados de UnderDown + bichos del Abismo (estilo Made in Abyss):
 #  Moki verde/azul/rojo (slimes), Putrek (zombie), Karkas (esqueleto),
 #  Vesper (murcielago), Rokthar (golem), Rey Mokulon (boss final),
 #  Orbe rastrero, Sedaluz, Dientepiedra, Eco profundo, Heraldo (abismo).

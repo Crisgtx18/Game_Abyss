@@ -32,7 +32,7 @@ import random
 LAYER_BOUNDS = [0.24, 0.36, 0.48, 0.60, 0.72, 0.84]
 
 LAYERS = [
-    dict(idx=0, name="Superficie", sub="Mokulandia respira aqui",
+    dict(idx=0, name="Superficie", sub="UnderDown respira aqui",
          tint=(0, 0, 0, 0), dark=0.0, hunger_mult=1.0, curse_dmg=0,
          slow=1.0, pool=["moki_verde"], desc="Sin efectos.",
          fog=(0, 0, 0, 0), spore=(0, 0, 0), glow=90),

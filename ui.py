@@ -78,7 +78,7 @@ def draw_menu(surf, title_sel=0, has_save=False):
         sz = rng.choice((1, 1, 2, 2, 3))
         surf.fill((brillo, brillo, min(255, brillo + 20)), (x, y, sz, sz))
     # titulo con sombra
-    draw_text_center(surf, "MOKULANDIA", 72, (255, 200, 80), 100)
+    draw_text_center(surf, "UNDERDOWN", 72, (255, 200, 80), 100)
     draw_text_center(surf, "Una aventura estilo Terraria - Kael vs el Rey Mokulon", 20, (180, 190, 220), 190)
     # menu con opciones separadas
     if has_save:
@@ -91,7 +91,7 @@ def draw_menu(surf, title_sel=0, has_save=False):
         f = _font(28)
         t = f.render(("> " if i == title_sel else "  ") + o, False, col, bg)
         surf.blit(t, (SCREEN_W // 2 - t.get_width() // 2, 280 + i * 60))
-    draw_text_center(surf, "W/S o flechas + ENTER  |  v2.0 Mokulandia", 18, (120, 130, 160), SCREEN_H - 60)
+    draw_text_center(surf, "W/S o flechas + ENTER  |  v2.0 UnderDown", 18, (120, 130, 160), SCREEN_H - 60)
 
 
 def draw_help(surf):
@@ -372,7 +372,7 @@ def draw_loading(surf, frac, label="Generando mundo...", tip=""):
         brillo = rng.randint(150, 235)
         sz = rng.choice((1, 1, 2, 2, 3))
         surf.fill((brillo, brillo, min(255, brillo + 20)), (x, y, sz, sz))
-    draw_text_center(surf, "MOKULANDIA", 64, (255, 200, 80), 120)
+    draw_text_center(surf, "UNDERDOWN", 64, (255, 200, 80), 120)
     draw_text_center(surf, label, 24, (255, 255, 255), 260)
     # barra
     bw, bh = min(560, SCREEN_W - 200), 30

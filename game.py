@@ -1,4 +1,4 @@
-# Motor principal del juego Mokulandia (Terraria-like 2D)
+# Motor principal del juego UnderDown (Terraria-like 2D)
 import json
 import math
 import os
@@ -53,7 +53,7 @@ class Game:
         self.res_idx = self.settings["res_idx"]
         self.fullscreen = self.settings["fullscreen"]
         self._apply_settings()
-        pygame.display.set_caption("Mokulandia - Terraria 2D")
+        pygame.display.set_caption("UnderDown - Terraria 2D")
         self.clock = pygame.time.Clock()
         self.audio = Audio()
         self.state = "menu"   # menu | help | play | settings | char_create | confirm
@@ -339,11 +339,11 @@ class Game:
         sx, sy = self.world.spawn
         self._warm_chunks_around(
             sx, sy, radius=2,
-            progress=lambda f: _progress(0.98 + f * 0.02, "Iluminando Mokulandia..."))
+            progress=lambda f: _progress(0.98 + f * 0.02, "Iluminando UnderDown..."))
         _progress(1.0, "Listo!")
         self.state = "play"
         self.paused = False
-        self.say(f"{self.char_name} despierta en Mokulandia. Habla con Liora (!).", 6.0)
+        self.say(f"{self.char_name} despierta en UnderDown. Habla con Liora (!).", 6.0)
 
     def _start_char_create(self):
         self.state = "char_create"
@@ -1265,7 +1265,7 @@ class Game:
             if e.kind == "heraldo_abismo":
                 self.say("HERALDO CAIDO! El Abismo guarda silencio... por ahora.", 8.0)
             if e.kind == "rey_mokulon":
-                self.say("REY MOKULON DERROTADO! Mokulandia es libre... por ahora.", 8.0)
+                self.say("REY MOKULON DERROTADO! UnderDown es libre... por ahora.", 8.0)
                 self.boss = None
             if e is self.boss:
                 self.boss = None

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Mokulandia - juego estilo Terraria 2D
+# UnderDown - juego estilo Terraria 2D
 # Ejecutar: python3 main.py
 import os
 import sys

@@ -1,7 +1,7 @@
 # ============================================================
-#  MOKULANDIA (estilo Terraria 2D) - Configuracion global
+#  UNDERDOWN (estilo Terraria 2D) - Configuracion global
 #  Lore inventado:
-#   Mundo: Mokulandia, continente flotante tras la caida del Rey Mokulon.
+#   Mundo: UnderDown, continente flotante tras la caida del Rey Mokulon.
 #   Heroe: Kael el Explorador (el jugador).
 #   Mobs: Mokis (slimes), Putrek (zombie), Karkas (esqueleto),
 #         Vesper (murcielago), Rokthar (golem), Rey Mokulon (boss).
