@@ -1,6 +1,6 @@
 # Mobs inventados de UnderDown + bichos del Abismo (estilo Made in Abyss):
-#  Moki verde/azul/rojo (slimes), Putrek (zombie), Karkas (esqueleto),
-#  Vesper (murcielago), Rokthar (golem), Rey Mokulon (boss final),
+#  Slimes verde/azul/rojo, Putrek (zombie), Karkas (esqueleto),
+#  Vesper (murcielago), Rokthar (golem), Rey Underdown (boss final),
 #  Orbe rastrero, Sedaluz, Dientepiedra, Eco profundo, Heraldo (abismo).
 # style: rama de dibujo en textures/draw (slime|walker|skeleton|bat|golem|king)
 import random
@@ -11,15 +11,15 @@ from config import TILE, GRAVITY, GRAVITY_FALL, MAX_FALL
 
 # stats: hp, damage, speed, jump, coins, drops
 MOB_STATS = {
-    "moki_verde":  dict(name="Moki verde",  hp=30,  dmg=8,  speed=2.0, knock=4, coins=(1, 4),   drops=[("gel", 1, 3)], style="slime"),
-    "moki_azul":   dict(name="Moki azul",   hp=55,  dmg=12, speed=2.2, knock=4, coins=(2, 6),   drops=[("gel", 2, 4)], style="slime"),
-    "moki_rojo":   dict(name="Moki rojo",   hp=80,  dmg=16, speed=2.6, knock=5, coins=(3, 8),   drops=[("gel", 3, 5)], style="slime"),
+    "slime_verde":  dict(name="Slime verde",  hp=30,  dmg=8,  speed=2.0, knock=4, coins=(1, 4),   drops=[("gel", 1, 3)], style="slime"),
+    "slime_azul":   dict(name="Slime azul",   hp=55,  dmg=12, speed=2.2, knock=4, coins=(2, 6),   drops=[("gel", 2, 4)], style="slime"),
+    "slime_rojo":   dict(name="Slime rojo",   hp=80,  dmg=16, speed=2.6, knock=5, coins=(3, 8),   drops=[("gel", 3, 5)], style="slime"),
     "putrek":      dict(name="Putrek",      hp=70,  dmg=15, speed=2.4, knock=5, coins=(3, 9),   drops=[("gel", 1, 2), ("palo", 1, 2), ("carne_cruda", 1, 2)], style="walker"),
     "karkas":      dict(name="Karkas",      hp=90,  dmg=18, speed=2.8, knock=5, coins=(4, 10),  drops=[("hueso", 0, 0), ("antorcha", 1, 3)], style="skeleton"),
     "vesper":      dict(name="Vesper",      hp=50,  dmg=14, speed=3.2, knock=3, coins=(3, 8),   drops=[("gel", 1, 2), ("carne_cruda", 1, 1)], style="bat"),
     "rokthar":     dict(name="Rokthar",     hp=220, dmg=28, speed=1.6, knock=8, coins=(10, 25), drops=[("piedra", 5, 12), ("hierro_crudo", 1, 4)], style="golem"),
-    "rey_mokulon": dict(name="REY MOKULON", hp=900, dmg=35, speed=3.0, knock=10, coins=(100, 200), drops=[("diamante", 5, 10), ("moneda_oro", 5, 10), ("pocion_vida_mayor", 2, 4)], style="king"),
-    "mini_moki":   dict(name="Mini Moki",   hp=20,  dmg=8,  speed=3.0, knock=3, coins=(0, 2),   drops=[("gel", 1, 2)], style="slime"),
+    "rey_underdown": dict(name="REY UNDERDOWN", hp=900, dmg=35, speed=3.0, knock=10, coins=(100, 200), drops=[("diamante", 5, 10), ("moneda_oro", 5, 10), ("pocion_vida_mayor", 2, 4)], style="king"),
+    "mini_slime":   dict(name="Mini Slime",   hp=20,  dmg=8,  speed=3.0, knock=3, coins=(0, 2),   drops=[("gel", 1, 2)], style="slime"),
     # ---- Abismo (capas 1-7, ver abyss.py) ----
     "orbe_rastrero": dict(name="Orbe rastrero", hp=60, dmg=14, speed=2.4, knock=4, coins=(2, 6), drops=[("gel", 2, 4), ("carne_cruda", 1, 2)], style="slime"),
     "sedaluz":     dict(name="Sedaluz",     hp=70,  dmg=16, speed=3.4, knock=3, coins=(3, 8),   drops=[("gel", 1, 3), ("baya_luminosa", 1, 3)], style="bat"),
@@ -29,11 +29,11 @@ MOB_STATS = {
 }
 
 COLORS = {
-    "moki_verde": (60, 200, 80), "moki_azul": (70, 140, 255),
-    "moki_rojo": (230, 70, 70), "putrek": (90, 140, 70),
+    "slime_verde": (60, 200, 80), "slime_azul": (70, 140, 255),
+    "slime_rojo": (230, 70, 70), "putrek": (90, 140, 70),
     "karkas": (210, 210, 210), "vesper": (120, 80, 160),
-    "rokthar": (130, 130, 145), "rey_mokulon": (150, 60, 220),
-    "mini_moki": (100, 220, 120),
+    "rokthar": (130, 130, 145), "rey_underdown": (150, 60, 220),
+    "mini_slime": (100, 220, 120),
     "orbe_rastrero": (40, 90, 70), "sedaluz": (120, 220, 255),
     "dientepiedra": (110, 95, 80), "eco_profundo": (70, 60, 120),
     "heraldo_abismo": (180, 30, 90),
@@ -55,7 +55,7 @@ class Enemy:
         self.speed = s["speed"]
         self.knock = s["knock"]
         self.style = s.get("style", "slime")  # rama de dibujo e IA (ver abyss)
-        size = 12 if kind == "rey_mokulon" else (10 if kind == "heraldo_abismo"
+        size = 12 if kind == "rey_underdown" else (10 if kind == "heraldo_abismo"
                 else (9 if kind in ("rokthar", "dientepiedra") else 7))
         self.w = self.h = size
         self.x, self.y = float(x), float(y)
@@ -125,11 +125,11 @@ class Enemy:
         dx = px - cx
         dy = py - cy
         dist = math.hypot(dx, dy)
-        boss = self.kind in ("rey_mokulon", "heraldo_abismo")
+        boss = self.kind in ("rey_underdown", "heraldo_abismo")
         enraged = boss and self.hp < self.max_hp * 0.3
         rage = 1.35 if enraged else 1.0
         # --- IA por tipo ---
-        if self.kind in ("moki_verde", "moki_azul", "moki_rojo", "mini_moki", "rey_mokulon",
+        if self.kind in ("slime_verde", "slime_azul", "slime_rojo", "mini_slime", "rey_underdown",
                          "orbe_rastrero", "heraldo_abismo"):
             # slimes y bichos rastreros: saltan hacia el jugador en rango
             aggro = 400 if boss else 150
@@ -166,7 +166,7 @@ class Enemy:
                 self.summon_cd -= dt
                 if self.summon_cd <= 0:
                     self.summon_cd = 6.0 / rage
-                    cria = "mini_moki" if self.kind == "rey_mokulon" else "orbe_rastrero"
+                    cria = "mini_slime" if self.kind == "rey_underdown" else "orbe_rastrero"
                     for _ in range(2):
                         spawned_minis.append(Enemy(cria, self.x + random.randint(-20, 20), self.y - 10))
         elif self.kind in ("vesper", "sedaluz"):

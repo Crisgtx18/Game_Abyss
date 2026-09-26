@@ -6,10 +6,10 @@ from config import TILE
 
 TIPS = {
     "liora": [
-        "Hola Kael. Pica arboles Mokubo con el hacha.",
+        "Hola Kael. Pica arboles con el hacha.",
         "Funde hierro crudo + carbon en el horno.",
         "De noche salen Putreks... lleva espada y antorchas.",
-        "El Altar Mokul al este... usa la Corona viscosa ahi. No digas que te avise.",
+        "El Altar de Underdown al este... usa la Corona viscosa ahi. No digas que te avise.",
         "Los cofres antiguos guardan diamantes. Busca la mina.",
         "Equipa armadura con E: casco, peto y botas te protegen.",
         "Come algo con click derecho (prueba la manzana). El hambre mata.",

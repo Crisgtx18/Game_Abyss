@@ -1,15 +1,15 @@
 # UNDERDOWN - Terraria 2D en Python + Pygame
 
 Aventura 2D estilo Terraria. Eres **Kael el Explorador** y debes sobrevivir,
-minar hasta el fondo, equiparte y derrotar al **Rey Mokulon**.
+minar hasta el fondo, equiparte y derrotar al **Rey Underdown**.
 
 ## Personajes inventados
 - **Kael** (tu): explorador de la superficie.
 - **Maestra Liora** (NPC): vende pociones (acercate y pulsa `T`, 10 cobres).
-- **Moki verde / azul / rojo**: slimes saltarines (el rojo sale de noche).
+- **Slime verde / azul / rojo**: slimes saltarines (el rojo sale de noche).
 - **Putrek**: zombie nocturno. **Karkas**: esqueleto de cueva.
 - **Vesper**: murcielago volador. **Rokthar**: golem de las profundidades.
-- **Rey Mokulon** (boss): invocalo con la **Corona viscosa** en el **Altar Mokul**.
+- **Rey Underdown** (boss): invocalo con la **Corona viscosa** en el **Altar de Underdown**.
 
 ## Controles
 - `A/D` moverse, `ESPACIO` saltar
@@ -32,18 +32,18 @@ SUBIR rapido dentro de la fosa te hiere y te deja pesadez. Bruno el Vigia
 vive en el borde: acepta sus misiones (!).
 
 ## Misiones (Liora y Bruno, tecla J)
-Madera y Mokis con Liora; bajar a la Capa 2, comer, traer un Orbe y matar
+Madera y Slimes con Liora; bajar a la Capa 2, comer, traer un Orbe y matar
 al Heraldo con Bruno. Habla con quien tenga `!` para aceptar/entregar.
 
 ## Progresion
-1. Tala Mokubos (madera) > mesa de trabajo > pico de piedra.
+1. Tala arboles (madera) > mesa de trabajo > pico de piedra.
 2. Baja a cuevas: carbon, hierro + horno > lingotes > armadura y espada hierro.
 3. Oro > diamante (fondo del mundo, cerca del bedrock).
 4. Fabrica la Corona viscosa (25 gel + 5 oro) y ve al Altar de ladrillo.
 
 ## Estructuras del mundo
 Casa en ruinas (cofre + mesa), mina vertical con antorchas y cofre profundo,
-Altar Mokul, cofres de cueva, arboles Mokubo, cuevas, playas de arena,
+Altar de Underdown, cofres de cueva, arboles, cuevas, playas de arena,
 vetas de carbon/hierro/oro/diamante, bedrock al fondo.
 
 ## Carpetas (enrutamiento)

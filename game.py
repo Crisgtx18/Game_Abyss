@@ -297,7 +297,7 @@ class Game:
     LOADING_TIPS = [
         "El Abismo tiene 7 capas. Bajar es facil. Subir... no.",
         "Habla con Liora y Bruno (!): misiones con recompensa.",
-        "La corona viscosa + el altar invocan al Rey Mokulon.",
+        "La corona viscosa + el altar invocan al Rey Underdown.",
         "El martillo rompe paredes de fondo. El pico, minerales.",
         "Come bayas y manzanas: el hambre tambien mata.",
     ]
@@ -760,14 +760,14 @@ class Game:
         elif depth > 0.65 and random.random() < 0.25:
             kind = "rokthar"
         elif depth > 0.35:
-            kind = random.choice(["karkas", "karkas", "vesper", "moki_azul"])
+            kind = random.choice(["karkas", "karkas", "vesper", "slime_azul"])
         else:
-            kind = random.choice(["putrek", "moki_rojo"]) if night else random.choice(["moki_verde", "moki_verde", "putrek"] if night else ["moki_verde"])
+            kind = random.choice(["putrek", "slime_rojo"]) if night else random.choice(["slime_verde", "slime_verde", "putrek"] if night else ["slime_verde"])
             if not night and random.random() < 0.7:
-                kind = "moki_verde"
+                kind = "slime_verde"
         # de dia no spawnear bajo tierra enemigos de superficie y viceversa: simple filtro
         e = Enemy(kind, x, y - 10)
-        if in_abyss and kind != "rey_mokulon":
+        if in_abyss and kind != "rey_underdown":
             sc = abyss.scale_for(layer_here)
             e.max_hp = e.hp = int(e.hp * sc)
             e.dmg = int(e.dmg * sc)
@@ -967,17 +967,17 @@ class Game:
                              for dy in range(-5, 6) for dx in range(-5, 6))
             if near_altar:
                 if self.boss and not self.boss.dead:
-                    self.say("El Rey Mokulon ya esta aqui!")
+                    self.say("El Rey Underdown ya esta aqui!")
                     return
                 p.inventory.remove("corona_viscosa", 1)
                 bx, by = p.x, p.y - 60
-                self.boss = Enemy("rey_mokulon", bx, by)
+                self.boss = Enemy("rey_underdown", bx, by)
                 self.enemies.append(self.boss)
                 self.audio.boss()
-                self.say("Has invocado al REY MOKULON!", 5.0)
+                self.say("Has invocado al REY UNDERDOWN!", 5.0)
                 return
             else:
-                self.say("Usa la corona junto al Altar Mokul (plataforma de ladrillo).")
+                self.say("Usa la corona junto al Altar de Underdown (plataforma de ladrillo).")
                 return
         # 3) comida? (click derecho con comida en mano)
         if sel and ITEMS.get(sel["id"], {}).get("tipo") == "comida":
@@ -1264,8 +1264,8 @@ class Game:
                 self.say("Mision lista para entregar (busca el !).", 4.0)
             if e.kind == "heraldo_abismo":
                 self.say("HERALDO CAIDO! El Abismo guarda silencio... por ahora.", 8.0)
-            if e.kind == "rey_mokulon":
-                self.say("REY MOKULON DERROTADO! UnderDown es libre... por ahora.", 8.0)
+            if e.kind == "rey_underdown":
+                self.say("REY UNDERDOWN DERROTADO! UnderDown es libre... por ahora.", 8.0)
                 self.boss = None
             if e is self.boss:
                 self.boss = None

@@ -1,10 +1,10 @@
 # ============================================================
 #  UNDERDOWN (estilo Terraria 2D) - Configuracion global
 #  Lore inventado:
-#   Mundo: UnderDown, continente flotante tras la caida del Rey Mokulon.
+#   Mundo: UnderDown, continente flotante tras la caida del Rey Underdown.
 #   Heroe: Kael el Explorador (el jugador).
-#   Mobs: Mokis (slimes), Putrek (zombie), Karkas (esqueleto),
-#         Vesper (murcielago), Rokthar (golem), Rey Mokulon (boss).
+#   Mobs: Slimes (slimes), Putrek (zombie), Karkas (esqueleto),
+#         Vesper (murcielago), Rokthar (golem), Rey Underdown (boss).
 #   NPC: Maestra Liora (aldeana que da consejos y vende pociones).
 # ============================================================
 

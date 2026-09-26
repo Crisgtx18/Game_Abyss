@@ -21,7 +21,7 @@ BLOCKS = {
     14: dict(name="Antorcha",      solid=False, hardness=0.2, tool=None,  drop="antorcha",     colors=[(60, 50, 30)], light=True),
     15: dict(name="Ladrillo",      solid=True,  hardness=2.2, tool="pico", drop="ladrillo",     colors=[(150, 70, 60), (135, 60, 52)]),
     16: dict(name="Cofre antiguo", solid=False, hardness=1.2, tool="hacha", drop="moneda_oro",  colors=[(140, 100, 40)], chest=True),
-    17: dict(name="Altar Mokul",   solid=True,  hardness=5.0, tool="pico", drop=None,           colors=[(70, 60, 120), (90, 80, 150)], station="altar"),
+    17: dict(name="Altar de Underdown",   solid=True,  hardness=5.0, tool="pico", drop=None,           colors=[(70, 60, 120), (90, 80, 150)], station="altar"),
     18: dict(name="Hierba",        solid=True,  hardness=0.7, tool=None,  drop="tierra",       colors=[(110, 75, 35)], grass=True),
     19: dict(name="Flor abisal",   solid=False, hardness=0.3, tool=None,  drop="baya_luminosa",colors=[(30, 40, 60)], light=True),
     20: dict(name="Roca abisal",   solid=True,  hardness=2.8, tool="pico", drop="roca_abisal",  colors=[(45, 40, 70), (55, 48, 85)]),

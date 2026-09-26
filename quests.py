@@ -17,7 +17,7 @@ Con que conecta:
 
 Como tocarlo luego:
     Anade una entrada a QUESTS y listo (sin tocar game.py). El target de
-    'kill' acepta 'moki*' como comodin (moki_verde/azul/rojo/mini_moki).
+    'kill' acepta 'slime*' como comodin (slime_verde/azul/rojo/mini_slime).
 
 Uso *args/**kwargs:
     progress_event() y check_* aceptan extras para futuros tipos de evento.
@@ -28,15 +28,15 @@ QUESTS = {
     "q_madera": dict(
         name="Primeros troncos", giver="liora", tipo="collect",
         target="madera", count=10, requires=None,
-        desc="Trae 10 de madera (tala Mokubos con el hacha).",
+        desc="Trae 10 de madera (tala arboles con el hacha).",
         reward=[("pocion_vida_menor", 2), ("pan_hongo", 2)],
         give_msg="Liora: con madera haras tu mesa. Toma, para el camino."),
-    "q_mokis": dict(
-        name="Limpieza de Mokis", giver="liora", tipo="kill",
-        target="moki*", count=8, requires="q_madera",
-        desc="Derrota 8 Mokis (verdes, azules o rojos).",
+    "q_slimes": dict(
+        name="Limpieza de Slimes", giver="liora", tipo="kill",
+        target="slime*", count=8, requires="q_madera",
+        desc="Derrota 8 Slimes (verdes, azules o rojos).",
         reward=[("moneda_plata", 15), ("carne_cocida", 2)],
-        give_msg="Liora: los Mokis invaden el huerto. Acaba con 8."),
+        give_msg="Liora: los Slimes invaden el huerto. Acaba con 8."),
     "q_filo": dict(
         name="Al filo del Abismo", giver="bruno", tipo="reach",
         target=2, count=1, requires=None,
@@ -69,15 +69,15 @@ QUESTS = {
         give_msg="Bruno: nadie ha vuelto del Torbellino. Se tu el primero."),
 }
 
-ORDER = ["q_madera", "q_mokis", "q_filo", "q_dieta", "q_reliquia", "q_heraldo", "q_torno"]
+ORDER = ["q_madera", "q_slimes", "q_filo", "q_dieta", "q_reliquia", "q_heraldo", "q_torno"]
 
 
 def _kill_match(target, kind, *args, **kwargs):
-    """Comodin de caza: 'moki*' vale para verde/azul/rojo/mini."""
+    """Comodin de caza: 'slime*' vale para verde/azul/rojo/mini."""
     if target.endswith("*"):
         prefix = target[:-1]
-        if prefix == "moki":
-            return kind.startswith("moki") or kind == "mini_moki"
+        if prefix == "slime":
+            return kind.startswith("slime") or kind == "mini_slime"
         return kind.startswith(prefix)
     return target == kind
 

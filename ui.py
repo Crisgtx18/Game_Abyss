@@ -79,7 +79,7 @@ def draw_menu(surf, title_sel=0, has_save=False):
         surf.fill((brillo, brillo, min(255, brillo + 20)), (x, y, sz, sz))
     # titulo con sombra
     draw_text_center(surf, "UNDERDOWN", 72, (255, 200, 80), 100)
-    draw_text_center(surf, "Una aventura estilo Terraria - Kael vs el Rey Mokulon", 20, (180, 190, 220), 190)
+    draw_text_center(surf, "Una aventura estilo Terraria - Kael vs el Rey Underdown", 20, (180, 190, 220), 190)
     # menu con opciones separadas
     if has_save:
         opts = ["NUEVA PARTIDA", "CONTINUAR", "COMO JUGAR", "SALIR"]
@@ -143,7 +143,8 @@ def draw_hud(surf, player, world, msg, boss=None, layer_idx=0):
     if boss:
         pygame.draw.rect(surf, (0, 0, 0), (SCREEN_W // 2 - 250, 12, 500, 20))
         pygame.draw.rect(surf, (160, 40, 200), (SCREEN_W // 2 - 248, 14, 496 * max(0, boss.hp / boss.max_hp), 16))
-        surf.blit(f.render("REY MOKULON", False, (255, 255, 255)), (SCREEN_W // 2 - 60, 14))
+        nb = f.render(boss.name, False, (255, 255, 255))
+        surf.blit(nb, (SCREEN_W // 2 - nb.get_width() // 2, 14))
     # hotbar
     inv = player.inventory
     for i in range(10):

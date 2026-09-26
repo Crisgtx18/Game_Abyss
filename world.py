@@ -1,5 +1,5 @@
 """Mundo procedural estilo Terraria: relieve, biomas, cuevas, minerales,
-arboles Mokubo y estructuras (casa en ruinas, mina, altar, cabana, cofres).
+arboles y estructuras (casa en ruinas, mina, altar, cabana, cofres).
 
 Que hace:
     Genera el tilemap jugable con 6 fases (ver generate()): relieve con
@@ -634,7 +634,7 @@ class World:
         - Civilizaciones (prof 0.30-0.75): salas de ladrillo con pilares,
           mesa, cofre con loot y antorchas; 2 templos con altar.
         - Bosques subterraneos (prof >0.65): tierra con hierba, arboles
-          Mokubo y flores abisales que dan luz.
+          Arboles y flores abisales que dan luz.
 
         Evitan el Abismo (+-22). Mas biomas y mas grandes.
         Conecta con: blocks (24/25/26), abyss.
@@ -768,7 +768,7 @@ class World:
                             and self.in_bounds(sx, yy + 1)
                             and self.tiles[yy + 1][sx] == 2):
                         self.tiles[yy + 1][sx] = 1 if rng.random() < 0.4 else 18
-            # arboles Mokubo subterraneos (4-8, antes 3-6)
+            # arboles subterraneos (4-8, antes 3-6)
             for _ in range(rng.randint(6, 12)):
                 sx = mx + rng.randint(-rx + 2, rx - 2)
                 base = None
@@ -811,7 +811,7 @@ class World:
             self.tiles[y][0] = 10
             self.tiles[y][W - 1] = 10
 
-    # ----- fase 6: arboles Mokubo donde el bosque es denso -----
+    # ----- fase 6: arboles donde el bosque es denso -----
     def _fase_arboles(self, nz, rng, density=0.12, **kwargs):
         """Bosques en manchas (ruido 1D) en vez de uniforme. Mas arboles para el mundo grande."""
         W = self.w
@@ -840,7 +840,7 @@ class World:
     # ----- fase 7: estructuras con loot -----
     def _fase_estructuras(self, nz, rng, **kwargs):
         """Casas amuebladas (cama, mesa, silla, farol, paredes), minas con
-        galerias y faroles, altares Mokul iluminados, cabanas subterraneas
+        galerias y faroles, altares de Underdown iluminados, cabanas subterraneas
         completas y cofres de cueva. Todo x2 en tiles (TILE=6)."""
         W, H = self.w, self.h
         sx = W // 2
@@ -920,7 +920,7 @@ class World:
                 ("pocion_vida_mayor", 1),
                 ("diamante", rng.randint(1, 3)),
             ]
-        # 2 altares Mokul con faroles
+        # 2 altares de Underdown con faroles
         for _ in range(2):
             ax = self._sitio_superficie(rng, lejos_de=sx, margen=16, ancho=16,
                                         avoid_x=abx, avoid_r=60)

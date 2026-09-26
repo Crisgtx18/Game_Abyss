@@ -1681,10 +1681,10 @@ def get_enemy_sprite(kind, anim=0.0, facing=1, *args, **kwargs):
         return png
     c = COLORS.get(kind, (200, 60, 60))
     a = frame * 1.5
-    if kind in ("rey_mokulon", "heraldo_abismo"):
-        crown = (255, 215, 60) if kind == "rey_mokulon" else (220, 40, 90)
+    if kind in ("rey_underdown", "heraldo_abismo"):
+        crown = (255, 215, 60) if kind == "rey_underdown" else (220, 40, 90)
         s = _slime_sprite(c, 16, 14, anim=a, facing=facing, crown=crown)
-    elif kind in ("moki_verde", "moki_azul", "moki_rojo", "mini_moki",
+    elif kind in ("slime_verde", "slime_azul", "slime_rojo", "mini_slime",
                   "orbe_rastrero"):
         s = _slime_sprite(c, 14, 10, anim=a, facing=facing)
     elif kind in ("putrek",):

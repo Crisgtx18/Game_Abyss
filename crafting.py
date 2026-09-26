@@ -53,7 +53,7 @@ RECIPES = [
     dict(result="lingote_oro", count=1, materials={"oro_crudo": 3, "carbon": 1}, station="furnace", desc="Fundir oro"),
     dict(result="ladrillo", count=4, materials={"piedra": 4}, station="furnace", desc="Ladrillos"),
 
-    # armaduras cuero (gel de Mokis = cuero)
+    # armaduras cuero (gel de Slimes = cuero)
     dict(result="casco_cuero", count=1, materials={"gel": 8}, station="workbench", desc="Capucha"),
     dict(result="peto_cuero", count=1, materials={"gel": 14}, station="workbench", desc="Peto cuero"),
     dict(result="botas_cuero", count=1, materials={"gel": 8}, station="workbench", desc="Botas cuero"),
@@ -76,7 +76,7 @@ RECIPES = [
     dict(result="pocion_piel_hierro", count=1, materials={"gel": 5, "hierro_crudo": 2}, station="workbench", desc="+8 def 60s"),
     dict(result="pocion_regen", count=1, materials={"gel": 5, "hoja": 6}, station="workbench", desc="Regen 30s"),
     dict(result="pocion_velocidad", count=1, materials={"gel": 3, "arena": 5}, station="workbench", desc="Velocidad 45s"),
-    dict(result="corona_viscosa", count=1, materials={"gel": 25, "oro_crudo": 5}, station="workbench", desc="Invoca al Rey Mokulon"),
+    dict(result="corona_viscosa", count=1, materials={"gel": 25, "oro_crudo": 5}, station="workbench", desc="Invoca al Rey Underdown"),
 
     # cocina (estilo Starbound: lo crudo rinde poco, lo cocinado mucho)
     dict(result="carne_cocida", count=1, materials={"carne_cruda": 2, "carbon": 1}, station="furnace", desc="+35 saciedad, +15 vida"),
